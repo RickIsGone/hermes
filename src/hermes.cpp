@@ -13,6 +13,15 @@ constexpr unsigned BMI160_I2C_ADDRESS = 0x68;
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
+float convertRawGyro(int gRaw) {
+   // since we are using 250 degrees/seconds range
+   // -250 maps to a raw value of -32768
+   // +250 maps to a raw value of 32767
+
+   float g = (gRaw * 250.0) / 32768.0;
+
+   return g;
+}
 
 void setup() {
    Serial.begin(115200);
@@ -73,14 +82,4 @@ void loop() {
    display.display();
 
    delay(500);
-}
-
-float convertRawGyro(int gRaw) {
-   // since we are using 250 degrees/seconds range
-   // -250 maps to a raw value of -32768
-   // +250 maps to a raw value of 32767
-
-   float g = (gRaw * 250.0) / 32768.0;
-
-   return g;
 }
