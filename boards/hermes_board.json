@@ -2,12 +2,12 @@
    "build": {
       "core": "esp32",
       "arduino": {
-         "ldscript": "esp32s3_out.ld"
+         "ldscript": "esp32_out.ld"
       },
       "f_cpu": "240000000L",
       "f_flash": "80000000L",
-      "mcu": "esp32s3",
-      "variant": "esp32s3"
+      "mcu": "esp32",
+      "variant": "esp32"
    },
    "connectivity": [
       "wifi",
@@ -20,7 +20,7 @@
       "arduino",
       "espidf"
    ],
-   "name": "My Custom ESP32-S3 Board",
+   "name": "hermes active aero handler",
    "upload": {
       "maximum_ram_size": 327680,
       "maximum_size": 1310720,
